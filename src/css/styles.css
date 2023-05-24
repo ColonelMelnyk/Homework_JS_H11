@@ -36,10 +36,11 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    background-color: darkblue;
   }
   
   .search-form input {
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -50,9 +51,9 @@
   .search-form button,
   .load-more {
     display: block;
-    padding: 10px 20px;
+    padding: 5px 15px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: rgb(8, 161, 8);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -66,7 +67,7 @@
   
   .search-form button:hover,
   .load-more:hover {
-    background-color: #0069d9;
+    background-color: rgb(9, 143, 9);
   }
   
   button:disabled {
@@ -86,7 +87,7 @@
   
   .photo-card {
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 10px;
   }
   
