@@ -9,22 +9,8 @@ export default class SearchEngineService {
    
     }
     async fetchPictures(){
-        const axiosSettings = {
-            method: "GET",
-            url: "https://pixabay.com/api",
-            params: {
-                key: "36691330-f06414af311b17804c7b2f1b7",
-                q: `${this.searchQuery}`,
-                orientation: "horizontal",
-                page: `${this.page}`,
-                per_page: `40`,
-                image_type: "photo",
-                safesearch: true,
-                
-            },
-        };
         try{
-            const response = await axios(axiosSettings);
+            const response = await axios.get(`https://pixabay.com/api/?key=36691330-f06414af311b17804c7b2f1b7&q=&orientation=horizontal&page=1&per_page=40&image_type=photo&safesearch=true`);
             this.updatePage();
             return response.data;
           
