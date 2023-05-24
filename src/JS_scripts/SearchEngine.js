@@ -3,9 +3,10 @@ import Notiflix from "notiflix";
 import { submitBtn, moreBtn } from ".";
 export default class SearchEngineService {
     constructor() {
-      this.searchQuery = '';
-      this.page = 1;
-      this.totalPages = 0;
+        this.page = 1;
+        this.totalPages = 0;
+        this.searchQuery = '';
+   
     }
     async fetchPictures(){
         const axiosSettings = {
@@ -14,11 +15,12 @@ export default class SearchEngineService {
             params: {
                 key: "36691330-f06414af311b17804c7b2f1b7",
                 q: `${this.searchQuery}`,
-                image_type: "photo",
-                safesearch: true,
                 orientation: "horizontal",
                 page: `${this.page}`,
                 per_page: `40`,
+                image_type: "photo",
+                safesearch: true,
+                
             },
         };
         try{

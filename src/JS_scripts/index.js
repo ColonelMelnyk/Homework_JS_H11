@@ -53,9 +53,9 @@ async function onClickMore(){
          loadBtn.hide();
          return;
        }
-      
+       
        loadBtn.enable();
-       if(result.hits.length < 40 || result.hits.length >= result.totalHits){
+       if( result.hits.length >= result.totalHits || result.hits.length < 40 ){
          Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
          loadBtn.hide();
          return;
