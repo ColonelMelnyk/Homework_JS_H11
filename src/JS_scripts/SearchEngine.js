@@ -31,7 +31,7 @@ export default class SearchEngineService {
         } catch{
             console.log("Error!")
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-            moreBth.classList.add('is-hidden');
+            moreBtn.classList.add('is-hidden');
         }
         
     }
