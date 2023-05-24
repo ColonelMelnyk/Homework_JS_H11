@@ -12,7 +12,7 @@ export default class SearchEngineService {
         try{
             const encodedQuery = encodeURIComponent(this.searchQuery);
             const response = await axios.get(
-              `https://pixabay.com/api/?key=36691330-f06414af311b17804c7b2f1b7&q=${encodedQuery}&orientation=horizontal&page=1&per_page=40&image_type=photo&safesearch=true`
+              `https://pixabay.com/api/?key=36691330-f06414af311b17804c7b2f1b7&q=${encodedQuery}&orientation=horizontal&page=${this.page}&per_page=40&image_type=photo&safesearch=true`
             );
             this.updatePage();
             return response.data;
