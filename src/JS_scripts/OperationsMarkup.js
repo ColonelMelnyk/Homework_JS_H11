@@ -1,9 +1,14 @@
 import { gallery } from ".";
+import simpleLightbox from "simplelightbox";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 export function onloadImageCard(hits){
     const cardMarkup = hits.map((hit) =>{
         return `
         <div class="photo-card">
-        <img src="${hit.webformatURL}" alt="${hit.tags}" loading="lazy" />
+        <a href ="${hit.webformatURL}">
+        <img src="${hit.webformatURL}" alt="${hit.tags}" loading="lazy"  />
+        </a>
         <div class="info">
           <p class="info-item">
             <b>Likes:</b>${hit.likes}
@@ -22,4 +27,6 @@ export function onloadImageCard(hits){
         `;
     }).join(``);
     gallery.insertAdjacentHTML(`beforeend`, cardMarkup);
+    
 }
+ export const markupLightbox = new simpleLightbox(`.photo-card a`,{});

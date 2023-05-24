@@ -1,7 +1,9 @@
 import Notiflix from "notiflix";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 import LoadBtn from "./LoadBtn";
 import SearchEngineService from "./SearchEngine";
-import { onloadImageCard, fillMarkup } from "./OperationsMarkup";
+import { onloadImageCard, markupLightbox } from "./OperationsMarkup";
  export  const submitBtn = document.querySelector(".search-form");
  export const moreBtn = document.querySelector(".load-more");
  export const gallery = document.querySelector(".gallery");
@@ -27,7 +29,8 @@ async function onSearch(evt){
      }
      else{
        onloadImageCard(result.hits);
-      
+      //  const markupLightbox = new SimpleLightbox(`.photo-card a`,{});
+       markupLightbox.refresh();
       if( result.hits.length < result.totalHits){
          Notiflix.Notify.success(`Hooray! We found ${result.totalHits} images.`);
          loadBtn.show();
@@ -48,6 +51,7 @@ async function onClickMore(){
       loadBtn.disable();
       const result = await searchEngineService.fetchPictures();
        onloadImageCard(result.hits);
+       markupLightbox.refresh();
       if (result.hits.length === 0) {
          Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
          loadBtn.hide();
