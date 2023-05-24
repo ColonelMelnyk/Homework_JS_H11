@@ -14,8 +14,8 @@ async function onSearch(evt){
    gallery.innerHTML =` `;
    loadBtn.hide();
    searchEngineService.resetPage();
-   searchEngineService.query = evt.currentTarget.elements.searchQuery.value;
-   if (searchEngineService.query === ` `){
+   searchEngineService.searchQuery = evt.currentTarget.elements.searchQuery.value;
+   if (searchEngineService.searchQuery === ` `){
       Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
       return;
    }
