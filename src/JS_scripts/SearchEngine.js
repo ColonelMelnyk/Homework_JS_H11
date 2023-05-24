@@ -1,13 +1,38 @@
 import axios from "axios";
 import Notiflix from "notiflix";
+import { submitBtn, loadBth } from ".";
 export default class SearchEngineService {
     constructor() {
       this.searchQuery = '';
       this.page = 1;
       this.totalPages = 0;
-      this.PER_PAGE = 40;
     }
-    incrementPage(){
+    async fetchPictures(){
+        const axiosSettings = {
+            method: "GET",
+            url: "https://pixabay.com/api",
+            params: {
+                key: "36691330-f06414af311b17804c7b2f1b7",
+                q: `${this.searchQuery}`,
+                image_type: "photo",
+                safesearch: true,
+                orientation: "horizontal",
+                page: `${this.page}`,
+                per_page: `40`,
+            },
+        };
+        try{
+            const response = await axios(axiosSettings);
+            return response.data;
+            this.updatePage();
+        } catch{
+            console.log("Error!")
+            Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+            moreBth.classList.add('is-hidden');
+        }
+        
+    }
+    updatePage(){
         this.page +=1;
     }
     resetPage(){
