@@ -1,7 +1,4 @@
-import SearchEngineService from "./SearchEngine";
-import LoadBtn from "./LoadBtn";
-import { submitBtn, loadBth, gallery } from ".";
-
+import { gallery } from ".";
 export function onloadImageCard(hits){
     const cardMarkup = hits.map((hit) =>{
         return `

@@ -1,6 +1,6 @@
 import axios from "axios";
 import Notiflix from "notiflix";
-import { submitBtn, loadBth } from ".";
+import { submitBtn, moreBtn } from ".";
 export default class SearchEngineService {
     constructor() {
       this.searchQuery = '';
@@ -23,8 +23,9 @@ export default class SearchEngineService {
         };
         try{
             const response = await axios(axiosSettings);
-            return response.data;
             this.updatePage();
+            return response.data;
+          
         } catch{
             console.log("Error!")
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
