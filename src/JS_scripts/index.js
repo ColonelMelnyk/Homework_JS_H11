@@ -1,5 +1,5 @@
 import Notiflix from "notiflix";
-import SimpleLightbox from "simplelightbox";
+import simpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import LoadBtn from "./LoadBtn";
 import SearchEngineService from "./SearchEngine";

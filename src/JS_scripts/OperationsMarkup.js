@@ -1,6 +1,5 @@
 import { gallery } from ".";
 import simpleLightbox from "simplelightbox";
-import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 export function onloadImageCard(hits){
     const cardMarkup = hits.map((hit) =>{
